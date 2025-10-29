@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Connexion"
+    android:orientation="vertical"
+    android:padding="25dp"
+    android:background="#9BC4FA"
+    >
+    <ImageButton
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/circle_button_background"
+        android:src="@drawable/outline_arrow_back_ios_24"
+        android:padding="10dp"
+        android:layout_margin="8dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Se connecter"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/poppins"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="#A2A2A7"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:textColor="#000"
+            android:layout_marginTop="10dp"
+            android:id="@+id/email_field"
+            android:background="@drawable/edittext_border"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mot de passe"
+            android:textColor="#A2A2A7"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:textColor="#000"
+            android:layout_marginTop="10dp"
+            android:id="@+id/password_field"
+            android:inputType="textPassword"
+            android:background="@drawable/edittext_border"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:id="@+id/error_field"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valider"
+            android:textColor="@color/white"
+            android:id="@+id/connect_button"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_bouton"
+            android:fontFamily="@font/poppins"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inscription_interface"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Inscription"
+    android:background="#9BC4FA"
+    android:paddingTop="15dp"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <ImageButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/circle_button_background"
+                android:src="@drawable/outline_arrow_back_ios_24"
+                android:padding="10dp"
+                android:layout_margin="8dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="60dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Connecter"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="#000"
+                    android:textSize="25sp"
+                    android:layout_marginStart="15dp"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prenom"
+                        android:fontFamily="@font/poppins"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/prenom"
+                        android:background="@drawable/edittext_border"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nom"
+                        android:fontFamily="@font/poppins"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Taper votre prenom"
+                        android:layout_marginBottom="15dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/nom"
+                        android:background="@drawable/edittext_border"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:fontFamily="@font/poppins"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Taper votre nom"
+                        android:layout_marginBottom="15dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/email"
+                        android:background="@drawable/edittext_border"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Telephone"
+                        android:fontFamily="@font/poppins"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Taper votre numero"
+                        android:layout_marginBottom="15dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/telephone"
+                        android:inputType="phone"
+                        android:background="@drawable/edittext_border"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Adresse"
+                        android:fontFamily="@font/poppins"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Taper votre adresse"
+                        android:layout_marginBottom="15dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/adresse"
+                        android:background="@drawable/edittext_border"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mot de passe"
+                        android:fontFamily="@font/poppins"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Taper votre mot de passe"
+                        android:layout_marginBottom="15dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/mdp"
+                        android:background="@drawable/edittext_border"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Confirmer mot de passe"
+                        android:fontFamily="@font/poppins"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Confirmer votre mot de passe"
+                        android:layout_marginBottom="15dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/confirm_mdp"
+                        android:background="@drawable/edittext_border"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date de naissance"
+                        android:fontFamily="@font/poppins"
+                        />
+                    <DatePicker
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/date_nais"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M'inscrire en tant que ?"
+                            android:fontFamily="@font/poppins"
+                            />
+                        <Spinner
+                            android:id="@+id/type_compte"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/options_array"
+                            />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/error_field"
+                        android:textColor="#FF0000"
+                        android:fontFamily="@font/poppins"
+                        />
+
+                </LinearLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="S'inscrire"
+                    android:id="@+id/s_inscrire"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_bouton"
+                    android:fontFamily="@font/poppins"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>
