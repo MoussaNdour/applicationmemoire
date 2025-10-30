@@ -13,6 +13,7 @@
     <ImageButton
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:id="@+id/connexion_retour_acceuil"
         android:background="@drawable/circle_button_background"
         android:src="@drawable/outline_arrow_back_ios_24"
         android:padding="10dp"
@@ -77,16 +78,42 @@
             android:textColor="#FF0000"
             android:id="@+id/error_field"
             />
-        <Button
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/connect_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Valider"
+            android:text="Connecter"
             android:textColor="@color/white"
-            android:id="@+id/connect_button"
             android:layout_gravity="center"
-            android:background="@drawable/rounded_bouton"
-            android:fontFamily="@font/poppins"
-            />
+            app:cornerRadius="12dp"
+            app:backgroundTint="@color/couleur_bouton"
+            style="@style/Widget.MaterialComponents.Button" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pas encore de compe ?"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/aller_s_inscrire"
+                android:text="s'inscrire"
+                android:textColor="@color/couleur_bouton"
+                android:textSize="15sp"
+                android:layout_marginLeft="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                />
+        </LinearLayout>
+
     </LinearLayout>
 
 

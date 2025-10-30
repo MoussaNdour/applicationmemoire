@@ -21,6 +21,7 @@
             <ImageButton
                 android:layout_width="48dp"
                 android:layout_height="48dp"
+                android:id="@+id/retour_connexion"
                 android:background="@drawable/circle_button_background"
                 android:src="@drawable/outline_arrow_back_ios_24"
                 android:padding="10dp"
@@ -200,15 +201,16 @@
                         />
 
                 </LinearLayout>
-                <Button
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/s_inscrire"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="S'inscrire"
-                    android:id="@+id/s_inscrire"
+                    android:textColor="@color/white"
                     android:layout_gravity="center"
-                    android:background="@drawable/rounded_bouton"
-                    android:fontFamily="@font/poppins"
-                    />
+                    app:cornerRadius="12dp"
+                    app:backgroundTint="@color/couleur_bouton"
+                    style="@style/Widget.MaterialComponents.Button" />
             </LinearLayout>
         </LinearLayout>
 

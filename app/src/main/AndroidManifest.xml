@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".FaireDemandeService"
+            android:exported="false" />
+        <activity
             android:name=".PrestataireParService"
             android:exported="false" />
         <activity

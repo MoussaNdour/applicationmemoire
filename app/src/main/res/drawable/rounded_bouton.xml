@@ -3,7 +3,7 @@
     android:shape="rectangle">
 
     <!-- Couleur de fond -->
-    <solid android:color="#3581E3" />
+    <solid android:color="@color/couleur_bouton" />
 
     <!-- Coins arrondis -->
     <corners android:radius="20dp" />
@@ -11,7 +11,7 @@
     <!-- Bordure (facultatif) -->
     <stroke
         android:width="2dp"
-        android:color="#3581E3" />
+        android:color="@color/couleur_bouton" />
 
     <!-- Marges intérieures (facultatif) -->
     <padding

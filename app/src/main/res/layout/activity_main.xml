@@ -151,24 +151,20 @@
 
             </LinearLayout>
         </HorizontalScrollView>
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/se_connecter"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            >
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Connecter"
-                android:id="@+id/se_connecter"
-                />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="S'inscrire"
-                android:id="@+id/s_inscrire"
-                />
-        </LinearLayout>
+            android:text="Se Connecter"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            app:cornerRadius="12dp"
+            app:backgroundTint="@color/couleur_bouton"
+            style="@style/Widget.MaterialComponents.Button" />
+
+
     </LinearLayout>
 
 

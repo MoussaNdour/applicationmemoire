@@ -1,11 +1,12 @@
 package com.example.applicationmemoire;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.applicationmemoire.apiservice.ApiService;
 import com.example.applicationmemoire.dto.RegisterUtilisateurDTO;
 import com.example.applicationmemoire.dto.UtilisateurDTO;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -31,10 +33,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Inscription extends AppCompatActivity {
 
-    private Button bouton_s_inscrire;
+    private MaterialButton bouton_s_inscrire;
     private EditText champ_prenom,champ_nom,champ_email,champ_telephone,champ_adresse,champ_mdp, champ_confirm_mdp;
     private DatePicker champ_date_nais;
     private Spinner champ_type_compte;
+    private ImageButton retour;
 
     private TextView champ_error;
 
@@ -44,6 +47,8 @@ public class Inscription extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_inscription);
+
+        retour=findViewById(R.id.retour_connexion);
 
         champ_prenom=findViewById(R.id.prenom);
         champ_nom=findViewById(R.id.nom);
@@ -55,10 +60,15 @@ public class Inscription extends AppCompatActivity {
         champ_date_nais=findViewById(R.id.date_nais);
         champ_type_compte=findViewById(R.id.type_compte);
         champ_error=findViewById(R.id.error_field);
-
-
-        //
         bouton_s_inscrire=findViewById(R.id.s_inscrire);
+
+        retour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Inscription.this,Connexion.class);
+                startActivity(intent);
+            }
+        });
 
         bouton_s_inscrire.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,8 +168,6 @@ public class Inscription extends AppCompatActivity {
                         }
                     });
                 }
-
-
 
 
             }

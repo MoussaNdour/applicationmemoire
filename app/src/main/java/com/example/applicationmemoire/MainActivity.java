@@ -18,6 +18,7 @@ import com.example.applicationmemoire.apiservice.ApiCallback;
 import com.example.applicationmemoire.dto.response.PrestataireResponseDTO;
 import com.example.applicationmemoire.dto.response.ServiceResponseDTO;
 import com.google.android.flexbox.FlexboxLayout;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView afficherTousServices;
 
-    Button se_connecter,s_inscrire;
+    MaterialButton se_connecter;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         les_prestataires=findViewById(R.id.les_prestataires);
         services_populaires=findViewById(R.id.servicesPopulaires);
         se_connecter=findViewById(R.id.se_connecter);
-        s_inscrire=findViewById(R.id.s_inscrire);
 
         afficherTousServices=findViewById(R.id.afficherTousServices);
 
@@ -139,12 +139,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        s_inscrire.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,Inscription.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }

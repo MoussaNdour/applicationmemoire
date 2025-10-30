@@ -4,8 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +17,6 @@ import com.example.applicationmemoire.dto.LoginUtilisateurDTO;
 import com.example.applicationmemoire.dto.UtilisateurDTO;
 
 
-import java.io.IOException;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -27,13 +26,17 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.Callback;
 import java.util.Map;
+
+import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 
 
 public class Connexion extends AppCompatActivity {
     EditText champ_email,champ_mdp;
-    TextView champ_erreur;
-    Button bouton_connecter;
+    TextView champ_erreur,aller_s_inscrire;
+    MaterialButton bouton_connecter;
+
+    ImageButton retour;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -45,8 +48,26 @@ public class Connexion extends AppCompatActivity {
         champ_email=findViewById(R.id.email_field);
         champ_mdp=findViewById(R.id.password_field);
         champ_erreur=findViewById(R.id.error_field);
+        aller_s_inscrire=findViewById(R.id.aller_s_inscrire);
+        retour=findViewById(R.id.connexion_retour_acceuil);
 
         bouton_connecter=findViewById(R.id.connect_button);
+
+        aller_s_inscrire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Connexion.this,Inscription.class);
+                startActivity(intent);
+            }
+        });
+
+        retour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Connexion.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         bouton_connecter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +89,7 @@ public class Connexion extends AppCompatActivity {
                             .build();
 
                     Retrofit retrofit = new Retrofit.Builder()
-                            .baseUrl("http://192.168.1.10:8080/")
+                            .baseUrl("http://192.168.1.6:8080/")
                             .client(client)
                             .addConverterFactory(GsonConverterFactory.create())
                             .build();
@@ -92,9 +113,19 @@ public class Connexion extends AppCompatActivity {
                                 UtilisateurDTO user = gson.fromJson(userJson, UtilisateurDTO.class);
 
                                 if(user!=null){
-                                    Intent intent=new Intent(Connexion.this,Profile.class);
-                                    intent.putExtra("token",token);
-                                    intent.putExtra("user",user);
+//                                    Intent intent=new Intent(Connexion.this,Profile.class);
+//                                    intent.putExtra("token",token);
+//                                    intent.putExtra("user",user);
+
+
+                                    LoginResponse loginResponse=new LoginResponse();
+                                    loginResponse.setUtilisateur(user);
+                                    loginResponse.setToken(token);
+
+                                    CacheManager cacheManager=new CacheManager(Connexion.this);
+                                    cacheManager.saveJson(gson.toJson(loginResponse));
+
+                                    Intent intent=new Intent(Connexion.this,MainActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }

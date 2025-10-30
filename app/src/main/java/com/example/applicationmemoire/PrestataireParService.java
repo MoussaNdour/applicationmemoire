@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,8 +13,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.applicationmemoire.apiservice.ApiCallback;
+import com.example.applicationmemoire.dto.UtilisateurDTO;
 import com.example.applicationmemoire.dto.response.PrestataireResponseDTO;
 import com.google.android.flexbox.FlexboxLayout;
+import com.google.android.material.button.MaterialButton;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -41,12 +45,32 @@ public class PrestataireParService extends AppCompatActivity {
             public void onSuccess(List<PrestataireResponseDTO> result) {
                 for(PrestataireResponseDTO prestataire:result){
 
-                    View vuePrestataire=getLayoutInflater().inflate(R.layout.profileprestataire,les_prestataire , false);
+                    View vuePrestataire=getLayoutInflater().inflate(R.layout.faire_demande,les_prestataire , false);
 
                     // Optionnel : modifier dynamiquement le contenu
                     TextView name = vuePrestataire.findViewById(R.id.prenom_nom);
                     TextView  description= vuePrestataire.findViewById(R.id.description);
                     ImageView imagePrestataire=vuePrestataire.findViewById(R.id.imagePrestataire);
+                    MaterialButton bouton_demander=vuePrestataire.findViewById(R.id.bouton_demander);
+
+                    bouton_demander.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Gson gson=new Gson();
+                            CacheManager cacheManager=new CacheManager(PrestataireParService.this);
+                            LoginResponse data = gson.fromJson(cacheManager.readJson(), LoginResponse.class);
+                            if(data==null){
+                                Intent intent=new Intent(PrestataireParService.this,Connexion.class);
+                                startActivity(intent);
+                            }
+                            else{
+                                String jwt=data.getToken();
+                                UtilisateurDTO user=data.getUtilisateur();
+                                Intent intent=new Intent(PrestataireParService.this,FaireDemandeService.class);
+                                startActivity(intent);
+                            }
+                        }
+                    });
 
                     name.setText(prestataire.getPrenom() + " " + prestataire.getNom());
                     description.setText("Description...");
