@@ -5,26 +5,29 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PrestataireParService"
+    tools:context=".RechercheService"
     android:orientation="vertical"
     >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:text="Resultats recherche"
+        android:textSize="25dp"
         android:layout_gravity="center"
-        android:text="Prestataires dispos"
+        android:textColor="#3581E3"
         />
+
     <com.google.android.flexbox.FlexboxLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/prestatairesParService"
+        android:id="@+id/services_trouvees"
         android:background="#9BC4FA"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:flexDirection="row"
         app:flexWrap="wrap"
+        app:justifyContent="center"
+        app:alignItems="center"
         >
 
     </com.google.android.flexbox.FlexboxLayout>

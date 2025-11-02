@@ -3,6 +3,8 @@ package com.example.applicationmemoire.apiservice;
 import com.example.applicationmemoire.dto.LoginUtilisateurDTO;
 import com.example.applicationmemoire.dto.RegisterUtilisateurDTO;
 import com.example.applicationmemoire.dto.UtilisateurDTO;
+import com.example.applicationmemoire.dto.request.DemandeServiceRequestDTO;
+import com.example.applicationmemoire.dto.response.DemandeServiceResponseDTO;
 import com.example.applicationmemoire.dto.response.PrestataireResponseDTO;
 import com.example.applicationmemoire.dto.response.ServiceResponseDTO;
 
@@ -36,4 +38,15 @@ public interface ApiService {
     Call<List<PrestataireResponseDTO>> getPrestataireByService(@Path("idservice") int idservice);
 
 
+    @GET("api/v1/demandeservice/demandesEntAttente")
+    Call<List<DemandeServiceResponseDTO>> getDemandesService();
+
+    @GET("api/v1/main/rechercheService/{nom}")
+    Call<List<ServiceResponseDTO>> rechercheServiceParNom(@Path("nom") String nom);
+
+    @GET("api/v1/service/{idservice}")
+    Call<ServiceResponseDTO> getService(@Path("idservice") int idservice);
+
+    @POST("/api/v1/demandeservice")
+    Call<DemandeServiceResponseDTO> createDemande(@Body DemandeServiceRequestDTO demande);
 }

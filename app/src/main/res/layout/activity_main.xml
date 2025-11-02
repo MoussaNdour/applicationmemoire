@@ -21,16 +21,18 @@
             android:layout_gravity="center"
             android:textColor="#3581E3"
             />
-        <SearchView
-            android:id="@+id/searchView"
+        <com.google.android.material.search.SearchBar
+            android:id="@+id/search_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:queryHint="Trouver des services..."
-            android:iconifiedByDefault="false"
-            android:background="@drawable/search_background"
-            android:layout_marginBottom="16dp"
-            android:layout_margin="15dp"
             />
+
+        <com.google.android.material.search.SearchView
+            android:id="@+id/barre_recherche"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,36 +77,16 @@
 
 
         </com.google.android.flexbox.FlexboxLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:gravity="center_vertical"
-            android:layout_marginTop="20dp"
-            >
+            android:text="Top demandes"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="25dp"
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Top demandes"
-                android:textStyle="bold"
-                android:textSize="18sp"
-
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Voir plus"
-                android:textColor="#2196F3"
-                android:textSize="14sp"
-                android:clickable="true"
-                android:focusable="true"
-                />
-        </LinearLayout>
+            />
         <HorizontalScrollView
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
@@ -124,14 +106,37 @@
 
             </LinearLayout>
         </HorizontalScrollView>
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nos Prestataires"
-            android:textStyle="bold"
-            android:textSize="18sp"
+            android:orientation="horizontal"
             android:layout_marginStart="15dp"
-            />
+            android:layout_marginEnd="15dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nos prestataires"
+                android:textStyle="bold"
+                android:textSize="18sp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/voirTousPrestataires"
+                android:text="Voir plus"
+                android:textColor="#2196F3"
+                android:textSize="14sp"
+                android:clickable="true"
+                android:focusable="true"
+                />
+        </LinearLayout>
         <HorizontalScrollView
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"

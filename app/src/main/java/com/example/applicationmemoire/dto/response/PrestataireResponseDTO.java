@@ -1,8 +1,9 @@
 package com.example.applicationmemoire.dto.response;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class PrestataireResponseDTO {
+public class PrestataireResponseDTO implements Serializable {
 
     private int idprestataire;
 
@@ -27,6 +28,8 @@ public class PrestataireResponseDTO {
     private String role;
 
     private Date date_de_naissance;
+
+    private String description;
 
     public int getIdprestataire() {
         return idprestataire;
@@ -98,6 +101,14 @@ public class PrestataireResponseDTO {
 
     public void setDate_de_naissance(Date date_de_naissance) {
         this.date_de_naissance = date_de_naissance;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
 

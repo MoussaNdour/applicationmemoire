@@ -16,6 +16,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Prestataires"
+            android:exported="false" />
+        <activity
+            android:name=".DetailsProfilePresta"
+            android:exported="false" />
+        <activity
+            android:name=".RechercheService"
+            android:exported="false" />
+        <activity
             android:name=".FaireDemandeService"
             android:exported="false" />
         <activity

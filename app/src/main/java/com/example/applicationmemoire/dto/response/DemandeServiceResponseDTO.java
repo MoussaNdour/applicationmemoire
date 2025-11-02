@@ -28,6 +28,14 @@ public class DemandeServiceResponseDTO implements Serializable {
 
     private int duree;
 
+    private String metierClient;
+
+    private String descriptionPrestataire;
+
+    private String adresseClient;
+
+    private String detailsdemande;
+
     /**
      * Constructor
      */
@@ -114,6 +122,38 @@ public class DemandeServiceResponseDTO implements Serializable {
 
     public void setDuree(int duree) {
         this.duree = duree;
+    }
+
+    public String getMetierClient() {
+        return metierClient;
+    }
+
+    public void setMetierClient(String metierClient) {
+        this.metierClient = metierClient;
+    }
+
+    public String getDescriptionPrestataire() {
+        return descriptionPrestataire;
+    }
+
+    public void setDescriptionPrestataire(String descriptionPrestataire) {
+        this.descriptionPrestataire = descriptionPrestataire;
+    }
+
+    public String getAdresseClient() {
+        return adresseClient;
+    }
+
+    public void setAdresseClient(String adresseClient) {
+        this.adresseClient = adresseClient;
+    }
+
+    public String getDetailsdemande() {
+        return detailsdemande;
+    }
+
+    public void setDetailsdemande(String detailsdemande) {
+        this.detailsdemande = detailsdemande;
     }
 }
 
